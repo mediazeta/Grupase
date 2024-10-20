@@ -398,7 +398,7 @@
 	<section class="product-tab-section" style="background-image:url(images/background/2.jpg)">
 		<div class="auto-container">
 			<!-- Content Box -->
-			<div class="content-box">
+			<div class="content-box" style="display: flex; justify-content: center; align-items: center;">
 				<div class="inner-content">
 					<!-- Sec Title -->
 					<div class="sec-title">
@@ -667,7 +667,7 @@
 	</section>
 		
 	<!-- Main Footer -->
-    <footer class="main-footer"  style="background-image: url(images/resource/pie.jpeg);">
+    <footer class="main-footer" style="background-image: url(images/resource/pie.jpeg);">
     	<div class="auto-container">
         	<!--Widgets Section-->
             <div class="widgets-section">
@@ -712,9 +712,43 @@
                 </div>
 		        </div>
 				</div>
+				<!-- Contact Form and Map Section -->
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="contact-form-section">
+                            <h4 class="widget-title" style="display: flex; justify-content: center;">Contáctanos</h4>
+                            <form action="https://formspree.io/f/xvonlrek" method="POST" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Tu Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="asunto" class="form-control" placeholder="Asunto" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="mensaje" cols="30" rows="5" class="form-control" placeholder="Mensaje" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="theme-btn btn-style-one">Enviar mensaje</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="map-section" style="height: 100%;">
+                            <h4 class="widget-title" style="display: flex; justify-content: center;">Nuestra Ubicación</h4>
+                            <div id="map" style="width: 100%; height: calc(100% - 40px);"></div>
+                        </div>
+                    </div>
+                </div>
 			</div>
-		</div>
-	</footer>
+    </div>
+</footer>
+
 	
 </div>
 <!--End pagewrapper-->
@@ -750,6 +784,24 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/paroller.js"></script>
 <script src="js/script.js"></script>
+
+<!-- Google Maps Script -->
+<script>
+    function initMap() {
+        const officeLocation = { lat: 43.36514919695639, lng: -5.846371893253794 }; // Coordinates for Oviedo, Spain
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: officeLocation,
+        });
+
+        const marker = new google.maps.Marker({
+            map: map,
+            position: officeLocation,
+            title: 'Grupase Asesores'
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyKZ5yobFavvFOvnh9b5TrkeJx_S7MWVs&callback=initMap"></script>
 
 </body>
 </html>
