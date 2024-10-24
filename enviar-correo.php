@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje = strip_tags(trim($_POST["mensaje"]));
 
     // Cambia esta dirección de correo por la dirección a la que quieres recibir los mensajes
-    $para = "tu@email.com";
+    $para = "adrigv2020@gmail.com";
     
     $asunto = "Nuevo mensaje de contacto de $nombre";
     
