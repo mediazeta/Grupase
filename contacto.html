@@ -56,11 +56,9 @@
 
 							<div class="navbar-collapse collapse scroll-nav clearfix" id="navbarSupportedContent">
 								<ul class="navigation clearfix">
-									<li class="current dropdown"><a href="index.html">Home</a>
-									</li>
-									<li class="dropdown"><a href="concepto.html">Asesoría Fiscal</a>
-									</li>
-									<li><a href="contacto.html">Contacto</a></li>
+									<li class="dropdown"><a href="index.html">Home</a></li>
+									<li class="dropdown"><a href="concepto.html">Asesoría Fiscal</a></li>
+									<li class="current"><a href="contacto.html">Contacto</a></li>
 								</ul>
 							</div>
 							
@@ -142,22 +140,46 @@
                     
                     Email:
                      luis@grupaseasesores.com</div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.5823600587833!2d-5.854821725011709!3d43.36484587103487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368cfc923b667b%3A0x173baf581cf8ce96!2zQy4gVXLDrWEsIDYwLCAxwrogYiwgMzMwMDMgT3ZpZWRvLCBBc3R1cmlhcw!5e0!3m2!1ses!2ses!4v1726695485797!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+             
+                <!-- Contact Form and Map Section -->
+                <div class="row" style="align-items: center;">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="contact-form-section">
+                            <h4 class="widget-title" style="display: flex; justify-content: center;">Contáctanos</h4>
+                            <form action="https://formspree.io/f/xvonlrek" method="POST" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Tu Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="asunto" class="form-control" placeholder="Asunto" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="mensaje" cols="30" rows="5" class="form-control" placeholder="Mensaje" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="theme-btn btn-style-one">Enviar mensaje</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="map-section" style="height: 400px;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.5823600587833!2d-5.846251469678685!3d43.365106734535445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368cf96cdb1c45%3A0x3c54e8b20c41c0f6!2sCalle%20Foncalada%2C%2020%2C%2033002%20Oviedo%2C%20Asturias!5e0!3m2!1ses!2ses!4v1710834896045!5m2!1ses!2ses" 
+                                style="border:0; width: 100%; height: 100%;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>    
+                        </div>
+                    </div>
+                </div>
             </div>
-			
-			<!-- Contact Form -->
-			<div class="contact-form">
-					
-				<!--Contact Form-->
-				<form method="post" action="mailto: luis@grupaseasesores.com" id="contact-form">
-					<div class="row clearfix">
-						
-						<div class="form-group text-center col-lg-12 col-md-12 col-sm-12">
-							<button class="theme-btn btn-style-one" type="submit" name="submit-form"><a href="mailto: luis@grupaseasesores.com"><p style="color:#000000";>Enviar </p></a></button>
-						</div>
-					</div>
-				</form>
-			</div>
 			
 		</div>
 
