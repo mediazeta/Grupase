@@ -1,0 +1,33 @@
+name: Deploy Web
+run-name: Deploy Web
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy-Web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: AKIA4SZHN77YMDUZBOED
+          aws-secret-access-key: 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
+          aws-region: us-east-1
+
+      - name: Delete contents of S3 bucket
+        run: |
+          aws s3 rm s3://grupaseasesores.es --recursive
+
+      - name: Upload build artifacts to S3
+        run: |
+          aws s3 cp ${{ github.workspace }}/ s3://grupaseasesores.es/ --recursive
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation --distribution-id E3685QRJGVPJ9K --paths "/*"
